@@ -1,0 +1,39 @@
+{
+  "name": "clipboard-image-helper",
+  "displayName": "Clipboard Image Helper",
+  "description": "Paste clipboard images and send path to Claude Code terminal",
+  "version": "0.0.1",
+  "publisher": "FahmiAyil",
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": ["Other"],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "clipboardImageHelper.pasteImage",
+        "title": "Paste Clipboard Image to Claude Code"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "clipboardImageHelper.pasteImage",
+        "key": "ctrl+shift+v",
+        "when": "terminalFocus"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "package": "vsce package"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.74.0",
+    "@types/node": "16.x",
+    "typescript": "^4.9.4",
+    "vsce": "^2.15.0"
+  }
+}
